@@ -1,0 +1,18 @@
+/** @format */
+
+@font-face {
+  font-family: "Damion";
+  src: url("../assets/fonts/Damion/Damion-Regular.ttf");
+}
+@font-face {
+  font-family: "Cabin";
+  src: url("../assets/fonts/Cabin/Cabin-VariableFont_wdth\,wght.ttf");
+}
+@font-face {
+  font-family: "Comic Neue";
+  src: url("../assets/fonts/Comic_Neue/ComicNeue-Regular.ttf");
+}
+
+a.active {
+  color: rgb(151, 8, 137);
+}
