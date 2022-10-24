@@ -5,6 +5,7 @@ import React, { useEffect } from "react";
 import { HiSpeakerphone, HiNewspaper } from "react-icons/hi";
 import Carousel from "../../components/carousel/Images";
 import Pengumuman from "../../components/carousel/Pengumuman";
+import ImgLoading from "../../components/loading/ImgLoading";
 import { DashbordContext } from "../../context/dashboard";
 import useBerita from "../../stores/berita";
 import usePengumuman from "../../stores/pengumuman";
@@ -25,12 +26,21 @@ const Dashboard = () => {
     <div>
       <DashbordContext.Provider value={{ dataSlide, dataPengumuman }}>
         <div className="grid grid-cols-1 lg:grid-cols-4 lg:gap-4 lg:row-span-2">
-          <div className="lg:row-span-2 lg:h-[36rem] h-20 lg:mt-2 lg:order-1 order-2">
-            <Pengumuman />
-          </div>
-          <div className="lg:col-span-3 -z-50 lg:order-2 order-1">
-            <Carousel />
-          </div>
+          {dataSlide.length > 0 ? (
+            <>
+              <div className="lg:row-span-2 lg:h-[36rem] h-20 lg:mt-2 lg:order-1 order-2">
+                <Pengumuman />
+              </div>
+              <div className="lg:col-span-3 lg:order-2 order-1">
+                <Carousel />
+              </div>
+            </>
+          ) : (
+            <div className="lg:col-span-3">
+              <ImgLoading />
+            </div>
+          )}
+
           <div className="lg:col-span-3 lg:order-3 mt-4 order-3">
             <div className="flex gap-10 justify-center flex-wrap">
               {/* pengumuman */}
@@ -72,7 +82,7 @@ const Dashboard = () => {
                   >
                     <HiNewspaper />
                     <div className="font-comic-neue italic font-bold">
-                      Berita
+                      Berita Terbaru
                     </div>
                   </CardHeader>
                   <CardBody className="font-comic-neue mt-[-4px] overflow-auto h-52">

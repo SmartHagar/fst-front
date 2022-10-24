@@ -10,6 +10,7 @@ module.exports = withMT({
       damion: ["Damion", "cursive"],
       cabin: ["Cabin", "sans-serif"],
       "comic-neue": ["Comic Neue", "sans-serif"],
+      arvo: ["Arvo", "serif"],
     },
   },
   plugins: [],

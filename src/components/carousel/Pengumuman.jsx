@@ -1,6 +1,6 @@
 /** @format */
 
-import React, { useContext } from "react";
+import React, { useContext, useEffect, useState } from "react";
 
 // Import Swiper React components
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -16,6 +16,16 @@ import { Autoplay, Mousewheel } from "swiper";
 import { DashbordContext } from "../../context/dashboard";
 // dataPengumuman
 const Pengumuman = () => {
+  // size window
+  const [width, setWidth] = useState(0);
+
+  useEffect(() => {
+    function handleResize() {
+      setWidth(window.innerWidth);
+    }
+    handleResize();
+  }, [setWidth]);
+
   const { dataPengumuman } = useContext(DashbordContext);
 
   const dtPeng = dataPengumuman.data;
@@ -53,7 +63,7 @@ const Pengumuman = () => {
   return (
     <Swiper
       direction={"vertical"}
-      slidesPerView={1}
+      slidesPerView={width > 955 ? 6 : 1}
       mousewheel={true}
       loop={true}
       autoplay={{

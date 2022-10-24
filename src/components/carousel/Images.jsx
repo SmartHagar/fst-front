@@ -9,7 +9,7 @@ import "swiper/css";
 import "swiper/css/navigation";
 
 // import required modules
-import { Autoplay, Pagination, Navigation, Lazy } from "swiper";
+import { Autoplay, Mousewheel, Pagination } from "swiper";
 import { DashbordContext } from "../../context/dashboard";
 import useUrl from "../../services/base_url";
 
@@ -21,6 +21,7 @@ const Images = () => {
       spaceBetween={30}
       centeredSlides={true}
       loop={true}
+      mousewheel={true}
       autoplay={{
         delay: 2500,
         disableOnInteraction: false,
@@ -28,18 +29,17 @@ const Images = () => {
       pagination={{
         clickable: true,
       }}
-      navigation={true}
-      modules={[Autoplay, Pagination, Navigation, Lazy]}
+      modules={[Autoplay, Pagination, Mousewheel]}
       lazy={true}
       className="mySwiper"
     >
       {dataSlide &&
         dataSlide.map((row, index) => (
           <SwiperSlide key={index}>
-            <div className="lg:h-96 h-48 overflow-hidden">
+            <div className="h-48 overflow-hidden lg:h-96 md:h-80 cursor-grab">
               <img
                 src={`${BASE_URL}/storage/${row.path_gambar}`}
-                className="object-cover lg:h-96 h-48 w-full"
+                className="object-cover h-48 w-full lg:h-96 md:h-80"
                 alt=""
               />
               <div className="absolute top-0">

@@ -7,11 +7,11 @@ import MyRoute from "./router/MyRoute";
 
 function App() {
   return (
-    <>
+    <div>
       <Menu />
       <MyRoute />
       <Footer />
-    </>
+    </div>
   );
 }
 

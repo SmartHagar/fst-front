@@ -22,12 +22,16 @@ const ListMenu = () => {
         submenu: true,
         linkSubMenu: [
           {
-            name: "Visi",
-            link: "/visi",
+            name: "Sejarah",
+            link: "/sejarah",
           },
           {
-            name: "Misi",
-            link: "/misi",
+            name: "Visi & Misi",
+            link: "/visi-misi",
+          },
+          {
+            name: "Pimpinan Fakultas",
+            link: "/pimpinan-fakultas",
           },
         ],
       },
@@ -37,27 +41,27 @@ const ListMenu = () => {
         linkSubMenu: [
           {
             name: "Sistem Informasi",
-            link: "",
+            link: "/sistem-informasi",
           },
           {
             name: "Teknik Geologi",
-            link: "",
+            link: "/geologi",
           },
           {
             name: "Biologi",
-            link: "",
+            link: "/biologi",
           },
         ],
       },
       {
         name: "Galeri",
         submenu: false,
-        link: "/tentang-kami",
+        link: "/galeri",
       },
       {
         name: "Berita",
         submenu: false,
-        link: "/tentang-kami",
+        link: "/berita",
       },
       {
         name: "Tentang Kami",
@@ -77,6 +81,13 @@ const ListMenu = () => {
     // If user clicks outside the element, hide it!
     setHeading("");
   });
+
+  const openLink = () => {
+    window.open(
+      "https://admin.uogp.databasemahasiswatambrauw.web.id",
+      "_blank"
+    );
+  };
 
   return (
     <ul className="mb-4 mt-2 flex flex-col gap-2 lg:mb-0 lg:mt-0 lg:flex-row lg:items-center lg:gap-6">
@@ -112,12 +123,11 @@ const ListMenu = () => {
                   } lg:absolute lg:min-w-max lg:mt-5 lg:bg-white/[.8] lg:pt-2 px-5 rounded z-50`}
                 >
                   {row.linkSubMenu.map((lsm, index) => (
-                    <div
-                      key={index}
-                      className="mb-2 cursor-pointer hover:bg-transparent hover:font-bold hover:text-pink-900"
-                    >
-                      <NavLink to={lsm.link}>{lsm.name}</NavLink>
-                    </div>
+                    <NavLink to={lsm.link} key={index}>
+                      <div className="mb-2 cursor-pointer hover:bg-transparent hover:font-bold hover:text-pink-900">
+                        {lsm.name}
+                      </div>
+                    </NavLink>
                   ))}
                 </div>
               </div>
@@ -125,7 +135,12 @@ const ListMenu = () => {
           </div>
         ))}
       <li>
-        <Button variant="gradient" size="sm" className="hidden lg:inline-block">
+        <Button
+          variant="gradient"
+          onClick={openLink}
+          size="sm"
+          className="hidden lg:inline-block"
+        >
           <span>Login</span>
         </Button>
       </li>

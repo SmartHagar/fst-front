@@ -20,6 +20,10 @@ const Menu = () => {
     );
   }, []);
 
+  const openLink = () => {
+    window.open("https://admin.uogp.databasemahasiswatambrauw.web.id");
+  };
+
   return (
     <nav className="sticky z-50 top-0 block shadow-md backdrop-saturate-200 backdrop-blur-2xl bg-opacity-80 border text-white w-full mx-auto py-1 px-4 bg-transparent">
       <div className="container mx-auto flex items-center justify-between text-blue-gray-900">
@@ -85,7 +89,13 @@ const Menu = () => {
       </div>
       <MobileNav open={openNav} className="overflow-auto">
         <ListMenu />
-        <Button variant="gradient" size="sm" fullWidth className="mb-2">
+        <Button
+          onClick={openLink}
+          variant="gradient"
+          size="sm"
+          fullWidth
+          className="mb-2"
+        >
           <span>Login</span>
         </Button>
       </MobileNav>
