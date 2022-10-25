@@ -1,11 +1,17 @@
 /** @format */
 
 import React from "react";
+import { motion } from "framer-motion";
 
 const Geologi = () => {
   return (
     <div className="flex flex-wrap justify-between mx-2 md:mx-10 min-h-[83vh]">
-      <div className="w-full font-arvo text-sm lg:w-3/4">
+      <motion.div
+        initial={{ x: 300, opacity: 0 }}
+        animate={{ x: 0, opacity: 1 }}
+        exit={{ x: -300, opacity: 0 }}
+        className="w-full font-arvo text-sm lg:w-3/4"
+      >
         <h2 className="mb-5 mt-2 font-bold text-lg sm:text-2xl">
           Visi Misi Program Studi Teknik Geologi
         </h2>
@@ -35,7 +41,7 @@ const Geologi = () => {
             </li>
           </ol>
         </div>
-      </div>
+      </motion.div>
       <div></div>
     </div>
   );

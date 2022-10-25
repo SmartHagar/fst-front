@@ -3,6 +3,7 @@
 import React, { useEffect, useState } from "react";
 import useUrl from "../../services/base_url";
 import useGaleri from "../../stores/galeri";
+import { motion } from "framer-motion";
 
 import { HiArrowSmLeft, HiArrowSmRight, HiOutlineX } from "react-icons/hi";
 
@@ -79,7 +80,13 @@ const Galeri = () => {
           <div className="flex flex-wrap justify-center">
             <div className={model ? "model open" : "model"}>
               {tmpImg && (
-                <div>
+                <motion.div
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  exit={{ opacity: 0 }}
+                  key={index}
+                  transition={{ duration: 1 }}
+                >
                   <div className="h-144">
                     <img
                       className="w-4/6 m-auto"
@@ -106,7 +113,7 @@ const Galeri = () => {
                       <HiArrowSmRight onClick={nextPicture} />
                     </div>
                   )}
-                </div>
+                </motion.div>
               )}
             </div>
 

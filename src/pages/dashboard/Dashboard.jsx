@@ -10,6 +10,7 @@ import { DashbordContext } from "../../context/dashboard";
 import useBerita from "../../stores/berita";
 import usePengumuman from "../../stores/pengumuman";
 import useSlide from "../../stores/Slide";
+import { motion } from "framer-motion";
 
 const Dashboard = () => {
   const { setSlide, dataSlide } = useSlide();
@@ -23,7 +24,12 @@ const Dashboard = () => {
   }, []);
 
   return (
-    <div>
+    <motion.div
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      exit={{ opacity: 0 }}
+      transition={{ duration: 1 }}
+    >
       <DashbordContext.Provider value={{ dataSlide, dataPengumuman }}>
         <div className="grid grid-cols-1 lg:grid-cols-4 lg:gap-4 lg:row-span-2">
           {dataSlide.length > 0 ? (
@@ -105,7 +111,7 @@ const Dashboard = () => {
           </div>
         </div>
       </DashbordContext.Provider>
-    </div>
+    </motion.div>
   );
 };
 

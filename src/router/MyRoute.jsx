@@ -13,26 +13,38 @@ import "./styel.css";
 import Galeri from "../pages/galeri/Galeri";
 import Berita from "../pages/berita/Berita";
 import NotFound from "../pages/error/NotFound";
+import ListBerita from "../pages/berita/ListBerita";
+import BeritaDetail from "../pages/berita/BeritaDetail";
+import Prodi from "../pages/prodi/Prodi";
+
+import { AnimatePresence } from "framer-motion";
 
 const MyRoute = () => {
   const location = useLocation();
   const pathname = location.pathname;
   return (
-    <Routes location={location} key={pathname}>
-      <Route path="/" element={<Navigate to="dashboard" replace />} />
-      <Route path="dashboard" index element={<Dashboard />} />
-      {/* profil */}
-      <Route path="visi-misi" index element={<VisiMisi />} />
-      <Route path="sejarah" index element={<Sejarah />} />
-      {/* prodi */}
-      <Route path="sistem-informasi" index element={<SistemInformasi />} />
-      <Route path="biologi" index element={<Biologi />} />
-      <Route path="geologi" index element={<Geologi />} />
-      <Route path="Galeri" index element={<Galeri />} />
-      <Route path="Berita" index element={<Berita />} />
-      <Route path="tentang-kami" index element={<TentangKami />} />
-      <Route path="*" index element={<NotFound />} />
-    </Routes>
+    <AnimatePresence exitBeforeEnter>
+      <Routes location={location} key={pathname}>
+        <Route path="/" element={<Navigate to="dashboard" replace />} />
+        <Route path="dashboard" index element={<Dashboard />} />
+        {/* profil */}
+        <Route path="visi-misi" index element={<VisiMisi />} />
+        <Route path="sejarah" index element={<Sejarah />} />
+        {/* prodi */}
+        <Route path="prodi" element={<Prodi />}>
+          <Route path="sistem-informasi" element={<SistemInformasi />} />
+          <Route path="biologi" element={<Biologi />} />
+          <Route path="geologi" element={<Geologi />} />
+        </Route>
+        <Route path="galeri" element={<Galeri />} />
+        <Route path="berita" element={<Berita />}>
+          <Route path="list" element={<ListBerita />} />
+          <Route path="detail" element={<BeritaDetail />} />
+        </Route>
+        <Route path="tentang-kami" index element={<TentangKami />} />
+        <Route path="*" index element={<NotFound />} />
+      </Routes>
+    </AnimatePresence>
   );
 };
 

@@ -41,15 +41,15 @@ const ListMenu = () => {
         linkSubMenu: [
           {
             name: "Sistem Informasi",
-            link: "/sistem-informasi",
+            link: "/prodi/sistem-informasi",
           },
           {
             name: "Teknik Geologi",
-            link: "/geologi",
+            link: "/prodi/geologi",
           },
           {
             name: "Biologi",
-            link: "/biologi",
+            link: "/prodi/biologi",
           },
         ],
       },
@@ -61,7 +61,7 @@ const ListMenu = () => {
       {
         name: "Berita",
         submenu: false,
-        link: "/berita",
+        link: "/berita/list",
       },
       {
         name: "Tentang Kami",

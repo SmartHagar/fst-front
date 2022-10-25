@@ -3,7 +3,7 @@
 import React from "react";
 import { Outlet } from "react-router-dom";
 
-const Berita = () => {
+const Prodi = () => {
   return (
     <>
       <Outlet />
@@ -11,4 +11,4 @@ const Berita = () => {
   );
 };
 
-export default Berita;
+export default Prodi;
