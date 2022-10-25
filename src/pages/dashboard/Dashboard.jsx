@@ -1,7 +1,7 @@
 /** @format */
 
 import { Card, CardBody, CardHeader } from "@material-tailwind/react";
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { HiSpeakerphone, HiNewspaper } from "react-icons/hi";
 import Carousel from "../../components/carousel/Images";
 import Pengumuman from "../../components/carousel/Pengumuman";
@@ -11,8 +11,13 @@ import useBerita from "../../stores/berita";
 import usePengumuman from "../../stores/pengumuman";
 import useSlide from "../../stores/Slide";
 import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
+import useUrl from "../../services/base_url";
+import PengumumanModal from "../../components/modals/PengumumanModal";
 
 const Dashboard = () => {
+  const { BASE_URL } = useUrl();
+
   const { setSlide, dataSlide } = useSlide();
   const { setPengumuman, dataPengumuman } = usePengumuman();
   const { setBerita, dataBerita } = useBerita();
@@ -23,6 +28,9 @@ const Dashboard = () => {
     setBerita();
   }, []);
 
+  const [open, setOpen] = useState(false);
+  const [row, setRow] = useState({});
+
   return (
     <motion.div
       initial={{ opacity: 0 }}
@@ -30,7 +38,9 @@ const Dashboard = () => {
       exit={{ opacity: 0 }}
       transition={{ duration: 1 }}
     >
-      <DashbordContext.Provider value={{ dataSlide, dataPengumuman }}>
+      <DashbordContext.Provider
+        value={{ dataSlide, dataPengumuman, setOpen, open, setRow, row }}
+      >
         <div className="grid grid-cols-1 lg:grid-cols-4 lg:gap-4 lg:row-span-2">
           {dataSlide.length > 0 ? (
             <>
@@ -63,21 +73,31 @@ const Dashboard = () => {
                   </CardHeader>
                   <CardBody className="font-comic-neue mt-[-4px] pl-10">
                     <ul>
-                      <li className="text-indigo-800 hover:underline cursor-pointer mb-2">
-                        Fakultas
-                      </li>
-                      <li className="text-blue-800 hover:underline cursor-pointer mb-2">
-                        Sistem Informasi
-                      </li>
-                      <li className="text-green-800 hover:underline cursor-pointer mb-2">
-                        Biologi
-                      </li>
-                      <li className="text-orange-800 hover:underline cursor-pointer">
-                        Teknik Geologi
-                      </li>
+                      <Link to="/pengumuman/1">
+                        <li className="text-indigo-800 hover:underline cursor-pointer mb-2">
+                          Fakultas
+                        </li>
+                      </Link>
+                      <Link to="/pengumuman/2">
+                        <li className="text-blue-800 hover:underline cursor-pointer mb-2">
+                          Sistem Informasi
+                        </li>
+                      </Link>
+                      <Link to="/pengumuman/3">
+                        <li className="text-green-800 hover:underline cursor-pointer mb-2">
+                          Biologi
+                        </li>
+                      </Link>
+                      <Link to="/pengumuman/4">
+                        <li className="text-orange-800 hover:underline cursor-pointer">
+                          Teknik Geologi
+                        </li>
+                      </Link>
                     </ul>
                   </CardBody>
                 </Card>
+                {/* Opan Modal */}
+                <PengumumanModal />
               </div>
               {/* berita */}
               <div className="lg:w-6/12 lg:order-2 w-full order-1">
@@ -95,13 +115,16 @@ const Dashboard = () => {
                     <ul className="list-disc">
                       {dataBerita.data &&
                         dataBerita.data.map((row) => (
-                          <li
+                          <Link
                             key={row.id}
-                            className="hover:text-blue-900 cursor-pointer"
+                            to="/berita/detail"
+                            state={{ row, BASE_URL }}
                           >
-                            {row.judul.substring(0, 70)}
-                            {row.judul.length > 70 ? "......" : ""}
-                          </li>
+                            <li className="hover:text-blue-900 cursor-pointer">
+                              {row.judul.substring(0, 70)}
+                              {row.judul.length > 70 ? "......" : ""}
+                            </li>
+                          </Link>
                         ))}
                     </ul>
                   </CardBody>

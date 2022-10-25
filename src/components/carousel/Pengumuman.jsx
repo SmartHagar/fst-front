@@ -14,6 +14,12 @@ import "swiper/css/pagination";
 // import required modules
 import { Autoplay, Mousewheel } from "swiper";
 import { DashbordContext } from "../../context/dashboard";
+
+import moment from "moment";
+import "moment/locale/id";
+
+moment.locale("id");
+
 // dataPengumuman
 const Pengumuman = () => {
   // size window
@@ -26,7 +32,7 @@ const Pengumuman = () => {
     handleResize();
   }, [setWidth]);
 
-  const { dataPengumuman } = useContext(DashbordContext);
+  const { dataPengumuman, setOpen, setRow } = useContext(DashbordContext);
 
   const dtPeng = dataPengumuman.data;
 
@@ -60,6 +66,11 @@ const Pengumuman = () => {
     }
   };
 
+  const handelClick = (row) => {
+    setOpen(true);
+    setRow(row);
+  };
+
   return (
     <Swiper
       direction={"vertical"}
@@ -80,6 +91,7 @@ const Pengumuman = () => {
               className={`${colorTitle(
                 row.prodi.kd_prodi
               )} lg:text-white cursor-pointer lg:ml-2 font-comic-neue group relative block text-sm font-medium focus:outline-none focus:ring`}
+              onClick={() => handelClick(row)}
             >
               <span
                 className={`${colorIsi(
@@ -92,7 +104,10 @@ const Pengumuman = () => {
                   row.prodi.kd_prodi
                 )} lg:text-white h-[5.3rem] overflow-hidden lg:rounded-lg lg:border relative block border-current px-2 py-3`}
               >
-                <h1 className="text-center font-bold">{row.prodi.nm_prodi}</h1>
+                <h1 className="text-center font-bold">
+                  {row.prodi.nm_prodi} -{" "}
+                  {moment(row.tgl_pengumuman).format("DD MMMM YY")}
+                </h1>
                 <p className="lg:text-white text-center">
                   {row.judul_pengumuman}
                 </p>

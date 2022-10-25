@@ -18,6 +18,8 @@ import BeritaDetail from "../pages/berita/BeritaDetail";
 import Prodi from "../pages/prodi/Prodi";
 
 import { AnimatePresence } from "framer-motion";
+import Pengumuman from "../pages/pengumuman/Pengumuman";
+import ListPengumuman from "../pages/pengumuman/ListPengumuman";
 
 const MyRoute = () => {
   const location = useLocation();
@@ -40,6 +42,9 @@ const MyRoute = () => {
         <Route path="berita" element={<Berita />}>
           <Route path="list" element={<ListBerita />} />
           <Route path="detail" element={<BeritaDetail />} />
+        </Route>
+        <Route path="pengumuman" element={<Pengumuman />}>
+          <Route path=":id" element={<ListPengumuman />} />
         </Route>
         <Route path="tentang-kami" index element={<TentangKami />} />
         <Route path="*" index element={<NotFound />} />
