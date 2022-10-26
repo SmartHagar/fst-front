@@ -17,11 +17,13 @@ const BeritaDetail = () => {
     setData(state);
   }, [pathname, state]);
 
-  const { setBerita, dataBerita } = useBerita();
+  const { setBerita, dataBerita, dataRandomBerita, setRandomBerita } =
+    useBerita();
 
   useEffect(() => {
     setBerita();
-  }, [pathname, setBerita]);
+    setRandomBerita();
+  }, [pathname, setBerita, setRandomBerita]);
   return (
     <div className="flex flex-wrap justify-between mx-2 md:mx-10">
       {data.row && (
@@ -53,7 +55,7 @@ const BeritaDetail = () => {
         <div className="bg-blue-600 h-10 w-11/12 mx-auto rounded-lg -mt-5 mb-4 shadow-lg flex justify-center items-center">
           <h1 className="font-arvo text-white font-bold">Berita Random</h1>
         </div>
-        <BeritaCard dataCard={dataBerita} random={true} />
+        <BeritaCard dataCard={dataRandomBerita} random={true} />
       </div>
     </div>
   );

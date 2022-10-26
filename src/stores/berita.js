@@ -10,6 +10,7 @@ const { api } = useUrl();
 const useBerita = create(
   devtools((set, get) => ({
     dataBerita: [],
+    dataRandomBerita: [],
     setBerita: async () => {
       try {
         const res = await api({
@@ -17,6 +18,24 @@ const useBerita = create(
           url: `/berita`,
         });
         set((state) => ({ ...state, dataBerita: res.data }));
+        return {
+          status: "berhasil",
+          data: res.data,
+        };
+      } catch (error) {
+        return {
+          status: "error",
+          error: error.response.data,
+        };
+      }
+    },
+    setRandomBerita: async () => {
+      try {
+        const res = await api({
+          method: "get",
+          url: `/berita/random`,
+        });
+        set((state) => ({ ...state, dataRandomBerita: res.data }));
         return {
           status: "berhasil",
           data: res.data,

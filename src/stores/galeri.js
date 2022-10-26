@@ -10,7 +10,7 @@ const { api } = useUrl();
 const useGaleri = create(
   devtools((set, get) => ({
     dataGaleri: [],
-    setGaleri: async (page) => {
+    setGaleri: async (page = 1) => {
       try {
         const res = await api({
           method: "get",

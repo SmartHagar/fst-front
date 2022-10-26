@@ -6,11 +6,13 @@ import useBerita from "../../stores/berita";
 import { motion } from "framer-motion";
 
 const ListBerita = () => {
-  const { setBerita, dataBerita } = useBerita();
+  const { setBerita, dataBerita, dataRandomBerita, setRandomBerita } =
+    useBerita();
 
   useEffect(() => {
     setBerita();
-  }, [setBerita]);
+    setRandomBerita();
+  }, [setBerita, setRandomBerita]);
 
   return (
     <motion.div
@@ -31,7 +33,7 @@ const ListBerita = () => {
         <div className="bg-blue-600 h-10 w-11/12 mx-auto rounded-lg -mt-5 mb-4 shadow-lg flex justify-center items-center">
           <h1 className="font-arvo text-white font-bold">Berita Random</h1>
         </div>
-        <BeritaCard dataCard={dataBerita} random={true} />
+        <BeritaCard dataCard={dataRandomBerita} random={true} />
       </div>
     </motion.div>
   );
