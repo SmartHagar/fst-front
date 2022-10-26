@@ -20,6 +20,7 @@ import Prodi from "../pages/prodi/Prodi";
 import { AnimatePresence } from "framer-motion";
 import Pengumuman from "../pages/pengumuman/Pengumuman";
 import ListPengumuman from "../pages/pengumuman/ListPengumuman";
+import Profile from "../pages/profile/Profile";
 
 const MyRoute = () => {
   const location = useLocation();
@@ -30,8 +31,10 @@ const MyRoute = () => {
         <Route path="/" element={<Navigate to="dashboard" replace />} />
         <Route path="dashboard" index element={<Dashboard />} />
         {/* profil */}
-        <Route path="visi-misi" index element={<VisiMisi />} />
-        <Route path="sejarah" index element={<Sejarah />} />
+        <Route path="profile" element={<Profile />}>
+          <Route path="visi-misi" index element={<VisiMisi />} />
+          <Route path="sejarah" index element={<Sejarah />} />
+        </Route>
         {/* prodi */}
         <Route path="prodi" element={<Prodi />}>
           <Route path="sistem-informasi" element={<SistemInformasi />} />

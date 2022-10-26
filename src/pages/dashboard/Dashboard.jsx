@@ -26,7 +26,7 @@ const Dashboard = () => {
     setSlide();
     setPengumuman();
     setBerita();
-  }, []);
+  }, [setSlide, setPengumuman, setBerita]);
 
   const [open, setOpen] = useState(false);
   const [row, setRow] = useState({});
@@ -73,12 +73,12 @@ const Dashboard = () => {
                   </CardHeader>
                   <CardBody className="font-comic-neue mt-[-4px] pl-10">
                     <ul>
-                      <Link to="/pengumuman/1">
+                      <Link to="/pengumuman/4">
                         <li className="text-indigo-800 hover:underline cursor-pointer mb-2">
                           Fakultas
                         </li>
                       </Link>
-                      <Link to="/pengumuman/2">
+                      <Link to="/pengumuman/1">
                         <li className="text-blue-800 hover:underline cursor-pointer mb-2">
                           Sistem Informasi
                         </li>
@@ -88,7 +88,7 @@ const Dashboard = () => {
                           Biologi
                         </li>
                       </Link>
-                      <Link to="/pengumuman/4">
+                      <Link to="/pengumuman/2">
                         <li className="text-orange-800 hover:underline cursor-pointer">
                           Teknik Geologi
                         </li>

@@ -9,7 +9,7 @@ const BeritaCard = ({ dataCard, random }) => {
   const { BASE_URL } = useUrl();
   return dataCard.data ? (
     dataCard.data.map((row, index) => {
-      const { gambar_berita, judul, isi_berita, penulis, id } = row;
+      const { gambar_berita, judul, isi_berita, penulis } = row;
       return (
         <article
           key={index}

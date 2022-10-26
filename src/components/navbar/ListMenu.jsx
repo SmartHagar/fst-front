@@ -23,15 +23,15 @@ const ListMenu = () => {
         linkSubMenu: [
           {
             name: "Sejarah",
-            link: "/sejarah",
+            link: "/profile/sejarah",
           },
           {
             name: "Visi & Misi",
-            link: "/visi-misi",
+            link: "/profile/visi-misi",
           },
           {
             name: "Pimpinan Fakultas",
-            link: "/pimpinan-fakultas",
+            link: "/profile/pimpinan-fakultas",
           },
         ],
       },

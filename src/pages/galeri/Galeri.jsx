@@ -42,7 +42,7 @@ const Galeri = () => {
     };
 
     fetch(page);
-  }, [page]);
+  }, [page, setGaleri]);
 
   const showImages = () => {
     return (
