@@ -8,6 +8,11 @@ import { Link, useParams } from "react-router-dom";
 import { DashbordContext } from "../../context/dashboard";
 import PengumumanModal from "../../components/modals/PengumumanModal";
 
+import moment from "moment";
+import "moment/locale/id";
+
+moment.locale("id");
+
 const ListPengumuman = () => {
   const { setPengumuman, dataPengumuman } = usePengumuman();
 
@@ -50,7 +55,7 @@ const ListPengumuman = () => {
                   ? `Pengumuman ${
                       dtProdi[0].prodi.kd_prodi !== "FST" ? "Prodi" : ""
                     } ${dtProdi[0].prodi.nm_prodi}`
-                  : "Belum Ada Pengumuman"}
+                  : "Memuat..."}
                 {console.log(dtProdi)}
               </h2>
             </div>
@@ -82,6 +87,9 @@ const ListPengumuman = () => {
                           }}
                         ></div>
                       </>
+                      <span>
+                        {moment(row.tgl_pengumuman).format("DD MMMM YY")}
+                      </span>
                     </div>
                   </div>
                 </article>
