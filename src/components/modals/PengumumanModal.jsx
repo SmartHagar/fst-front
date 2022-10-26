@@ -45,7 +45,7 @@ const PengumumanModal = () => {
                 <div className="flex justify-between mb-2">
                   <h2 className="text-sm">Prodi {row.prodi.nm_prodi}</h2>
                   <h2 className="text-sm">
-                    Tgl. {moment(row.tgl_pengumuman).format("DD MMMM YY")}
+                    Tgl. {moment(row.tgl_pengumuman).format("DD MMMM YYYY")}
                   </h2>
                 </div>
                 <hr />

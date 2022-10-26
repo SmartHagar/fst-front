@@ -106,7 +106,7 @@ const Pengumuman = () => {
               >
                 <h1 className="text-center font-bold">
                   {row.prodi.nm_prodi} -{" "}
-                  {moment(row.tgl_pengumuman).format("DD MMMM YY")}
+                  {moment(row.tgl_pengumuman).format("DD MMM YYYY")}
                 </h1>
                 <p className="lg:text-white text-center">
                   {row.judul_pengumuman}

@@ -1,17 +1,26 @@
 /** @format */
 
-import React from "react";
+import React, { useEffect } from "react";
 import { motion } from "framer-motion";
+import useDosen from "../../stores/dosen";
+
+import Dosen from "../../components/dosen/Dosen";
 
 const SistemInformasi = () => {
+  const { setDosenProdi, dataDosenProdi } = useDosen();
+
+  useEffect(() => {
+    setDosenProdi(1);
+  }, [setDosenProdi]);
+
   return (
-    <div className="flex flex-wrap justify-between mx-2 md:mx-10 min-h-[83vh]">
-      <motion.div
-        initial={{ x: 300, opacity: 0 }}
-        animate={{ x: 0, opacity: 1 }}
-        exit={{ x: -300, opacity: 0 }}
-        className="w-full font-arvo text-sm lg:w-3/4"
-      >
+    <motion.div
+      initial={{ x: 300, opacity: 0 }}
+      animate={{ x: 0, opacity: 1 }}
+      exit={{ x: -300, opacity: 0 }}
+      className="flex flex-wrap justify-between mx-2 md:mx-10"
+    >
+      <div className="w-full font-arvo text-sm lg:w-3/4 min-h-[83vh]">
         <h2 className="mb-5 mt-2 font-bold text-lg sm:text-2xl">
           Visi Misi Program Studi Sistem Informasi
         </h2>
@@ -71,9 +80,16 @@ const SistemInformasi = () => {
             </p>
           </div>
         </div>
-      </motion.div>
-      <div></div>
-    </div>
+      </div>
+      {/* Side */}
+      <div className="w-full lg:w-[24%] bg-white/[0.3] rounded-lg lg:mt-14 mt-12">
+        <div className="bg-blue-600 h-10 w-11/12 mx-auto rounded-lg -mt-5 mb-4 shadow-lg flex justify-center items-center">
+          <h1 className="font-arvo text-white font-bold">Dosen SI</h1>
+        </div>
+        {console.log(dataDosenProdi)}
+        <Dosen dataDosenProdi={dataDosenProdi} />
+      </div>
+    </motion.div>
   );
 };
 
