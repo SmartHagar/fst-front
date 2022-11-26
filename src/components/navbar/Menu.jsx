@@ -21,7 +21,7 @@ const Menu = () => {
   }, []);
 
   const openLink = () => {
-    window.open("https://admin.uogp.databasemahasiswatambrauw.web.id");
+    window.open("https://admin.fstuogp.com");
   };
 
   return (

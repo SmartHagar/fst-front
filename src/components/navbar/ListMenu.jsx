@@ -83,10 +83,7 @@ const ListMenu = () => {
   });
 
   const openLink = () => {
-    window.open(
-      "https://admin.uogp.databasemahasiswatambrauw.web.id",
-      "_blank"
-    );
+    window.open("https://admin.fstuogp.com", "_blank");
   };
 
   return (
