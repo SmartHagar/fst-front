@@ -9,9 +9,10 @@ import "swiper/css";
 import "swiper/css/navigation";
 
 // import required modules
-import { Autoplay, Mousewheel, Pagination } from "swiper";
+import { Autoplay, Mousewheel, Pagination, EffectCube } from "swiper";
 import { DashbordContext } from "../../context/dashboard";
 import useUrl from "../../services/base_url";
+import "swiper/css/effect-cube";
 
 const Images = () => {
   const { BASE_URL } = useUrl();
@@ -20,8 +21,9 @@ const Images = () => {
     <Swiper
       spaceBetween={30}
       centeredSlides={true}
+      effect={"cube"}
+      grabCursor={true}
       loop={true}
-      mousewheel={true}
       autoplay={{
         delay: 2500,
         disableOnInteraction: false,
@@ -29,7 +31,13 @@ const Images = () => {
       pagination={{
         clickable: true,
       }}
-      modules={[Autoplay, Pagination, Mousewheel]}
+      cubeEffect={{
+        shadow: true,
+        slideShadows: true,
+        shadowOffset: 20,
+        shadowScale: 0.94,
+      }}
+      modules={[Autoplay, Pagination, Mousewheel, EffectCube]}
       lazy={true}
       className="mySwiper"
     >

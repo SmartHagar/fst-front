@@ -25,28 +25,9 @@ const Menu = () => {
   };
 
   return (
-    <nav className="sticky z-50 top-0 block shadow-md backdrop-saturate-200 backdrop-blur-2xl bg-opacity-80 border text-white w-full mx-auto py-1 px-4 bg-transparent">
+    <nav className="sticky z-50 top-0 block shadow-md backdrop-saturate-200 backdrop-blur-2xl bg-opacity-80 border text-white w-full mx-auto py-2 px-4 bg-transparent">
       <div className="container mx-auto flex items-center justify-between text-blue-gray-900">
-        <div className="flex gap-2 items-center">
-          <div>
-            <img
-              src={require("../../assets/images/uogp.png")}
-              className="w-12"
-              alt="logo"
-            />
-          </div>
-          <div>
-            <Typography
-              as="a"
-              href="#"
-              variant="small"
-              className="mr-4 cursor-pointer py-1.5 font-normal font-damion sm:text-xl text-xs"
-            >
-              <span>FAKULTAS SAINS & TEKNOLOGI</span>
-            </Typography>
-          </div>
-        </div>
-        <div className="hidden lg:block">
+        <div className="hidden lg:block w-full">
           <ListMenu />
         </div>
         <IconButton

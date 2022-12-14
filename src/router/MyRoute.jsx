@@ -26,7 +26,7 @@ const MyRoute = () => {
   const location = useLocation();
   const pathname = location.pathname;
   return (
-    <AnimatePresence exitBeforeEnter>
+    <AnimatePresence mode="wait">
       <Routes location={location} key={pathname}>
         <Route path="/" element={<Navigate to="dashboard" replace />} />
         <Route path="dashboard" index element={<Dashboard />} />
