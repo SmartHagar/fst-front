@@ -14,6 +14,7 @@ import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import useUrl from "../../services/base_url";
 import PengumumanModal from "../../components/modals/PengumumanModal";
+import useVideo from "../../stores/video";
 
 const Dashboard = () => {
   const { BASE_URL } = useUrl();
@@ -21,12 +22,14 @@ const Dashboard = () => {
   const { setSlide, dataSlide } = useSlide();
   const { setPengumuman, dataPengumuman } = usePengumuman();
   const { setBerita, dataBerita } = useBerita();
+  const { setVideoUtama, dataVideo } = useVideo();
 
   useEffect(() => {
     setSlide();
     setPengumuman();
     setBerita();
-  }, [setSlide, setPengumuman, setBerita]);
+    setVideoUtama();
+  }, [setSlide, setPengumuman, setBerita, setVideoUtama]);
 
   const [open, setOpen] = useState(false);
   const [row, setRow] = useState({});
@@ -99,7 +102,7 @@ const Dashboard = () => {
                 {/* Opan Modal */}
                 <PengumumanModal />
               </div>
-              {/* berita */}
+              {/* Video */}
               <div className="lg:w-6/12 lg:order-2 w-full order-1">
                 <Card className="w-full mt-5 mx-auto">
                   <CardHeader
@@ -108,30 +111,78 @@ const Dashboard = () => {
                   >
                     <HiNewspaper />
                     <div className="font-comic-neue italic font-bold">
-                      Berita Terbaru
+                      Video
                     </div>
                   </CardHeader>
-                  <CardBody className="font-comic-neue mt-[-4px] overflow-auto h-52">
-                    <ul className="list-disc">
-                      {dataBerita.data &&
-                        dataBerita.data.map((row) => (
-                          <Link
-                            key={row.id}
-                            to="/berita/detail"
-                            state={{ row, BASE_URL }}
-                          >
-                            <li className="hover:text-blue-900 cursor-pointer">
-                              {row.judul.substring(0, 70)}
-                              {row.judul.length > 70 ? "......" : ""}
-                            </li>
-                          </Link>
-                        ))}
-                    </ul>
+                  <CardBody className="font-comic-neue mx-[-4px] h-72 w-full">
+                    {dataVideo.length > 0 ? (
+                      <>
+                        <iframe
+                          width="100%"
+                          height="100%"
+                          src={dataVideo[0].url}
+                          title={dataVideo[0].judul}
+                          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                          allowFullScreen
+                        ></iframe>
+                      </>
+                    ) : (
+                      <>
+                        <h1 className="text-xl">Tidak Ada Video</h1>
+                      </>
+                    )}
                   </CardBody>
                 </Card>
               </div>
             </div>
           </div>
+        </div>
+
+        {/* berita */}
+        <div className="lg:container mx-auto w-full mt-10">
+          <Card className="w-full mt-5 mx-auto">
+            <CardHeader
+              color="light-blue"
+              className="relative h-12 flex justify-center items-center gap-2"
+            >
+              <HiNewspaper />
+              <div className="font-comic-neue italic font-bold">
+                Berita Terbaru
+              </div>
+            </CardHeader>
+            <CardBody className="font-comic-neue mt-[-4px]">
+              <div className="grid lg:grid-cols-4 md:grid-cols-2 grid-cols-1 gap-4">
+                {dataBerita.data &&
+                  dataBerita.data.map((row) => (
+                    <Link
+                      key={row.id}
+                      to="/berita/detail"
+                      state={{ row, BASE_URL }}
+                      className="group relative block bg-black h-80 overflow-hidden"
+                    >
+                      <img
+                        alt="Developer"
+                        src={`${BASE_URL}/storage/${row.gambar_berita}`}
+                        className="absolute inset-0 h-full w-full object-cover opacity-75 transition ease-in-out delay-150 group-hover:opacity-50 group-hover:scale-125"
+                      />
+
+                      <div className="relative p-8">
+                        <p className="text-xl font-bold text-white">
+                          {row.judul.substring(0, 200)}
+                          {row.judul.length > 150 ? "......" : ""}
+                        </p>
+                      </div>
+                    </Link>
+                  ))}
+              </div>
+
+              {/* <Link key={row.id} to="/berita/detail" state={{ row, BASE_URL }}>
+                <li className="hover:text-blue-900 cursor-pointer">
+                  
+                </li>
+              </Link> */}
+            </CardBody>
+          </Card>
         </div>
       </DashbordContext.Provider>
     </motion.div>

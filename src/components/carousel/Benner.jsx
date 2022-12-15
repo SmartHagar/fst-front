@@ -12,7 +12,7 @@ import "swiper/css";
 import "swiper/css/navigation";
 
 // import required modules
-import { Autoplay, Mousewheel, Pagination } from "swiper";
+import { Autoplay, Pagination } from "swiper";
 
 const Benner = () => {
   const { BASE_URL } = useUrl();

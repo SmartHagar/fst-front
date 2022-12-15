@@ -10,7 +10,6 @@ import MyRoute from "./router/MyRoute";
 function App() {
   const location = useLocation();
   const { pathname } = location;
-  console.log(pathname);
   return (
     <div>
       {pathname === "/dashboard" ? <Benner /> : ""}
