@@ -22,6 +22,10 @@ const ListMenu = () => {
         submenu: true,
         linkSubMenu: [
           {
+            name: "Sambutan Dekan",
+            link: "/profile/sambutan-dekan",
+          },
+          {
             name: "Sejarah",
             link: "/profile/sejarah",
           },
@@ -30,8 +34,8 @@ const ListMenu = () => {
             link: "/profile/visi-misi",
           },
           {
-            name: "Pimpinan Fakultas",
-            link: "/profile/pimpinan-fakultas",
+            name: "Struktur Organisasi",
+            link: "/profile/struktur-organisasi",
           },
         ],
       },
@@ -64,7 +68,22 @@ const ListMenu = () => {
         link: "/berita/list",
       },
       {
-        name: "Tentang Kami",
+        name: "Download",
+        submenu: false,
+        link: "/download/dokumen",
+        linkSubMenu: [
+          {
+            name: "Jadwal",
+            link: "/download/jadwal",
+          },
+          {
+            name: "Dokumen",
+            link: "/download/dokumen",
+          },
+        ],
+      },
+      {
+        name: "Lokasi",
         submenu: false,
         link: "/tentang-kami",
       },
@@ -118,7 +137,7 @@ const ListMenu = () => {
                   <div
                     className={`${
                       heading === row.name ? "block" : "hidden"
-                    } lg:absolute lg:min-w-max lg:mt-5 lg:bg-white/[.8] lg:pt-2 px-5 rounded z-50`}
+                    } lg:absolute lg:min-w-max lg:mt-3 lg:bg-white/[0.95] lg:pt-2 px-5 rounded z-50`}
                   >
                     {row.linkSubMenu.map((lsm, index) => (
                       <NavLink to={lsm.link} key={index}>

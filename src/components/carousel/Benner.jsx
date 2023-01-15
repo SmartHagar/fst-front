@@ -42,10 +42,11 @@ const Benner = () => {
       lazy={true}
       className="mySwiper"
     >
+      {console.log("banner", dataBenner)}
       {dataBenner &&
         dataBenner.map((row, index) => (
           <SwiperSlide key={index}>
-            <div className="h-32 overflow-hidden lg:h-80 md:h-52 cursor-grab">
+            <div className="h-32 overflow-hidden lg:h-80 md:h-52 cursor-grab z-50">
               <img
                 src={`${BASE_URL}/storage/${row.gambar}`}
                 className="object-fill h-32 w-full lg:h-80 md:h-52"

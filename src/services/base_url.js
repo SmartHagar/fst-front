@@ -2,11 +2,12 @@
 
 import axios from "axios";
 
-const BASE_URL = "https://admin.fstuogp.com";
-// const BASE_URL = "http://127.0.0.1:8000";
+// const BASE_URL = "https://admin.fstuogp.com";
+const BASE_URL = "http://127.0.0.1:8000";
 const url_auth = `${BASE_URL}/auth`;
 const url_api = `${BASE_URL}/json`;
 const url_crud = `${BASE_URL}/crud`;
+const url_storage = `${BASE_URL}/storage`;
 
 export default function useUrl() {
   const auth = axios.create({
@@ -18,5 +19,8 @@ export default function useUrl() {
   const api = axios.create({
     baseURL: url_api,
   });
-  return { auth, crud, api, BASE_URL };
+  const storage = axios.create({
+    baseURL: url_storage,
+  });
+  return { auth, crud, api, storage, BASE_URL };
 }

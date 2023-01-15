@@ -15,6 +15,7 @@ import { Link } from "react-router-dom";
 import useUrl from "../../services/base_url";
 import PengumumanModal from "../../components/modals/PengumumanModal";
 import useVideo from "../../stores/video";
+import Benner from "../../components/carousel/Benner";
 
 const Dashboard = () => {
   const { BASE_URL } = useUrl();
