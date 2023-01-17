@@ -33,7 +33,7 @@ const Dokumen = () => {
           Dokumen FST
         </h2>
         {/* card */}
-        <div className="grid grid-cols-2 gap-4">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
           {dtDokumen &&
             dtDokumen.map((row, index) => (
               <div key={index}>
