@@ -1,6 +1,6 @@
 /** @format */
 
-import React from "react";
+import React, { useEffect } from "react";
 import { Navigate, Route, Routes, useLocation } from "react-router-dom";
 import Dashboard from "../pages/dashboard/Dashboard";
 import Biologi from "../pages/prodi/Biologi";
@@ -25,6 +25,10 @@ import Jadwal from "../pages/download/jadwal/Jadwal";
 const MyRoute = () => {
   const location = useLocation();
   const pathname = location.pathname;
+  // scroll to top
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [pathname]);
   return (
     <AnimatePresence mode="wait">
       <Routes location={location} key={pathname}>
@@ -45,7 +49,7 @@ const MyRoute = () => {
         {/* berita */}
         <Route path="berita" element={<Berita />}>
           <Route path="list" element={<ListBerita />} />
-          <Route path="detail" element={<BeritaDetail />} />
+          <Route path="detail/:idBerita/:tag" element={<BeritaDetail />} />
         </Route>
         <Route path="pengumuman" element={<Pengumuman />}>
           <Route path=":id" element={<ListPengumuman />} />

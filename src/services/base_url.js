@@ -22,5 +22,5 @@ export default function useUrl() {
   const storage = axios.create({
     baseURL: url_storage,
   });
-  return { auth, crud, api, storage, BASE_URL };
+  return { auth, crud, api, storage, BASE_URL, url_storage };
 }

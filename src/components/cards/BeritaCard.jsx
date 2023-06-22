@@ -29,8 +29,7 @@ const BeritaCard = ({ dataCard, random }) => {
             <div className="ml-4">
               <h3 className="sm:text-lg font-bold">
                 <Link
-                  to="/berita/detail"
-                  state={{ row, BASE_URL }}
+                  to={`/berita/detail/fst-${row.id}/${row.tag}`}
                   className="hover:underline cursor-pointer"
                 >
                   {!random ? judul : judul.substring(0, 25) + "..."}

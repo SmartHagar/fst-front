@@ -1,24 +1,32 @@
 /** @format */
 
-import React, { useEffect, useState } from "react";
-import { useLocation } from "react-router-dom";
+import React, { useEffect } from "react";
+import { useLocation, useParams } from "react-router-dom";
 import BeritaCard from "../../components/cards/BeritaCard";
 import useBerita from "../../stores/berita";
 import { motion } from "framer-motion";
+import useUrl from "../../services/base_url";
 
 const BeritaDetail = () => {
   const location = useLocation();
-  const state = location.state;
   const pathname = location.pathname;
+  const { idBerita, tag } = useParams();
+  const { url_storage } = useUrl();
 
-  const [data, setData] = useState([]);
+  const {
+    setBerita,
+    dataRandomBerita,
+    setRandomBerita,
+    setShowBerita,
+    dtShowBerita,
+  } = useBerita();
 
+  // memanggil show berita
   useEffect(() => {
-    setData(state);
-  }, [pathname, state]);
-
-  const { setBerita, dataBerita, dataRandomBerita, setRandomBerita } =
-    useBerita();
+    // membuang fst- dari idBerita
+    const id = idBerita.split("-")[1];
+    setShowBerita({ id, tag });
+  }, [idBerita, tag, setShowBerita]);
 
   useEffect(() => {
     setBerita();
@@ -26,27 +34,24 @@ const BeritaDetail = () => {
   }, [pathname, setBerita, setRandomBerita]);
   return (
     <div className="flex flex-wrap justify-between mx-2 md:mx-10">
-      {data.row && (
+      {dtShowBerita && (
         <motion.div
           initial={{ x: 300, opacity: 0 }}
           animate={{ x: 0, opacity: 1 }}
           exit={{ x: -300, opacity: 0 }}
-          key={data.row.id}
+          key={dtShowBerita.id}
           className="w-full font-arvo text-sm lg:w-3/4 min-h-[83vh]"
         >
           <h2 className="mb-5 mt-2 font-bold text-md sm:text-xl text-center">
-            {data.row.judul}
+            {dtShowBerita.judul}
           </h2>
           <div>
-            <img
-              src={`${data.BASE_URL}/storage/${data.row.gambar_berita}`}
-              alt=""
-            />
+            <img src={`${url_storage}/${dtShowBerita.gambar_berita}`} alt="" />
           </div>
           <div
             className="mt-6 leading-6"
             dangerouslySetInnerHTML={{
-              __html: data.row.isi_berita,
+              __html: dtShowBerita.isi_berita,
             }}
           ></div>
         </motion.div>

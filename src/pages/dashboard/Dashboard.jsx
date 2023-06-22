@@ -154,27 +154,28 @@ const Dashboard = () => {
             <CardBody className="font-comic-neue mt-[-4px]">
               <div className="grid lg:grid-cols-4 md:grid-cols-2 grid-cols-1 gap-4">
                 {dataBerita.data &&
-                  dataBerita.data.map((row) => (
-                    <Link
-                      key={row.id}
-                      to="/berita/detail"
-                      state={{ row, BASE_URL }}
-                      className="group relative block bg-black h-80 overflow-hidden"
-                    >
-                      <img
-                        alt="Developer"
-                        src={`${BASE_URL}/storage/${row.gambar_berita}`}
-                        className="absolute inset-0 h-full w-full object-cover opacity-75 transition ease-in-out delay-150 group-hover:opacity-50 group-hover:scale-125"
-                      />
+                  dataBerita.data.map((row) => {
+                    return (
+                      <Link
+                        key={row.id}
+                        to={`/berita/detail/fst-${row.id}/${row.tag}`}
+                        className="group relative block bg-black h-80 overflow-hidden"
+                      >
+                        <img
+                          alt="Developer"
+                          src={`${BASE_URL}/storage/${row.gambar_berita}`}
+                          className="absolute inset-0 h-full w-full object-cover opacity-75 transition ease-in-out delay-150 group-hover:opacity-50 group-hover:scale-125"
+                        />
 
-                      <div className="relative p-8">
-                        <p className="text-xl font-bold text-white">
-                          {row.judul.substring(0, 200)}
-                          {row.judul.length > 150 ? "......" : ""}
-                        </p>
-                      </div>
-                    </Link>
-                  ))}
+                        <div className="relative p-8">
+                          <p className="text-xl font-bold text-white">
+                            {row.judul.substring(0, 200)}
+                            {row.judul.length > 150 ? "......" : ""}
+                          </p>
+                        </div>
+                      </Link>
+                    );
+                  })}
               </div>
 
               {/* <Link key={row.id} to="/berita/detail" state={{ row, BASE_URL }}>
