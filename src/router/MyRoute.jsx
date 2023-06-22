@@ -1,7 +1,7 @@
 /** @format */
 
 import React, { useEffect } from "react";
-import { Navigate, Route, Routes, useLocation } from "react-router-dom";
+import { Route, Routes, useLocation } from "react-router-dom";
 import Dashboard from "../pages/dashboard/Dashboard";
 import Biologi from "../pages/prodi/Biologi";
 import Geologi from "../pages/prodi/Geologi";
@@ -32,12 +32,11 @@ const MyRoute = () => {
   return (
     <AnimatePresence mode="wait">
       <Routes location={location} key={pathname}>
-        <Route path="/" element={<Navigate to="dashboard" replace />} />
-        <Route path="dashboard" index element={<Dashboard />} />
+        <Route path="/" index element={<Dashboard />} />
         {/* profil */}
         <Route path="profile">
-          <Route path="visi-misi" index element={<VisiMisi />} />
-          <Route path="sejarah" index element={<Sejarah />} />
+          <Route path="visi-misi" element={<VisiMisi />} />
+          <Route path="sejarah" element={<Sejarah />} />
         </Route>
         {/* prodi */}
         <Route path="prodi">
