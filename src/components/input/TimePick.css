@@ -1,0 +1,10 @@
+/** @format */
+
+.timepick-datepicker {
+  background-color: rgb(255, 255, 255) !important;
+  color: rgb(0, 0, 0) !important;
+  border: 0;
+  padding: 0 !important;
+  width: 100%;
+  border-bottom: 1px white solid;
+}

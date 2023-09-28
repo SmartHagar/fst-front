@@ -25,10 +25,6 @@ const ListMenu = () => {
         subName: "profile",
         linkSubMenu: [
           {
-            name: "Sambutan Dekan",
-            link: "/profile/sambutan-dekan",
-          },
-          {
             name: "Sejarah",
             link: "/profile/sejarah",
           },
@@ -37,8 +33,8 @@ const ListMenu = () => {
             link: "/profile/visi-misi",
           },
           {
-            name: "Struktur Organisasi",
-            link: "/profile/struktur-organisasi",
+            name: "Pimpinan Fakultas",
+            link: "/profile/pimpinan-fakultas",
           },
         ],
       },
@@ -85,6 +81,11 @@ const ListMenu = () => {
         //     link: "/download/dokumen",
         //   },
         // ],
+      },
+      {
+        name: "Mahasiswa",
+        submenu: false,
+        link: "/mahasiswa",
       },
       {
         name: "Lokasi",

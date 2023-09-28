@@ -10,6 +10,7 @@
 
 # production
 /build
+/fst-front-build
 
 # misc
 .DS_Store

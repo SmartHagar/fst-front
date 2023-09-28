@@ -21,6 +21,8 @@ import Pengumuman from "../pages/pengumuman/Pengumuman";
 import ListPengumuman from "../pages/pengumuman/ListPengumuman";
 import Dokumen from "../pages/download/dokumen/Dokumen";
 import Jadwal from "../pages/download/jadwal/Jadwal";
+import PimpinanFST from "../pages/profile/PimpinanFST";
+import Mhs from "../pages/mhs/Mhs";
 
 const MyRoute = () => {
   const location = useLocation();
@@ -37,6 +39,7 @@ const MyRoute = () => {
         <Route path="profile">
           <Route path="visi-misi" element={<VisiMisi />} />
           <Route path="sejarah" element={<Sejarah />} />
+          <Route path="pimpinan-fakultas" element={<PimpinanFST />} />
         </Route>
         {/* prodi */}
         <Route path="prodi">
@@ -57,6 +60,7 @@ const MyRoute = () => {
           <Route path="jadwal" element={<Jadwal />} />
           <Route path="dokumen" element={<Dokumen />} />
         </Route>
+        <Route path="mahasiswa" index element={<Mhs />} />
         <Route path="tentang-kami" index element={<TentangKami />} />
         <Route path="*" index element={<NotFound />} />
       </Routes>
