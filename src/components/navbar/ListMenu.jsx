@@ -93,6 +93,11 @@ const ListMenu = () => {
         link: "/alumni",
       },
       {
+        name: "Laboratorium",
+        submenu: false,
+        link: "/lab",
+      },
+      {
         name: "Lokasi",
         submenu: false,
         link: "/tentang-kami",
