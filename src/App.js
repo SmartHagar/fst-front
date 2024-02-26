@@ -13,7 +13,7 @@ function App() {
 
   return (
     <SearchDataContext.Provider value={search}>
-      <div>
+      <div className="overflow-x-hidden">
         <Menu />
         <MyRoute />
         <Footer />

@@ -1,8 +1,22 @@
 /** @format */
 
-import React from "react";
+import React, { useEffect, useState } from "react";
 
 const Dosen = ({ dataDosenProdi }) => {
+  console.log({ dataDosenProdi });
+  const [isLoading, setIsLoading] = useState(true);
+
+  useEffect(() => {
+    if (dataDosenProdi) {
+      setTimeout(() => {
+        setIsLoading(false);
+      }, 1000);
+    }
+  }, [dataDosenProdi]);
+
+  if (isLoading) {
+    return <div className="text-black text-center">Loading...</div>;
+  }
   return (
     dataDosenProdi &&
     dataDosenProdi.map((row, index) => (

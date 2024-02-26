@@ -33,7 +33,7 @@ const ListMenu = () => {
             link: "/profile/visi-misi",
           },
           {
-            name: "Pimpinan Fakultas",
+            name: "Pimpinan Fakultas & Prodi",
             link: "/profile/pimpinan-fakultas",
           },
         ],
