@@ -6,12 +6,12 @@ import PimpinanProdi from "./PimpinanProdi";
 
 const PimpinanFST = () => {
   return (
-    <div className="flex flex-col gap-y-20 w-full mx-2 md:mx-10 min-h-[83vh] mb-20">
+    <div className="flex flex-wrap justify-between mx-2 md:mx-10 mb-10">
       <motion.div
         initial={{ y: -300, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
         exit={{ y: 300, opacity: 0 }}
-        className="w-full font-arvo text-sm lg:w-3/4"
+        className="w-full font-arvo text-sm mb-10"
       >
         <h2 className="mb-5 mt-2 font-bold text-2xl text-center">
           Pimpinan Fakultas

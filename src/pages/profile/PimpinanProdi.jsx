@@ -9,7 +9,7 @@ const PimpinanProdi = () => {
       initial={{ y: -300, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
       exit={{ y: 300, opacity: 0 }}
-      className="w-full font-arvo text-sm lg:w-3/4"
+      className="w-full font-arvo text-sm"
     >
       <h2 className="mb-5 mt-2 font-bold text-2xl text-center">
         Pimpinan Program Studi
@@ -19,7 +19,7 @@ const PimpinanProdi = () => {
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 ">
           <div className="flex flex-col items-center">
             <img
-              src="/pimpinan/bingkai.png"
+              src="/pimpinan/bpk_axel.jpeg"
               alt=""
               srcset=""
               className="rounded-md h-64"

@@ -24,39 +24,31 @@ const Biologi = () => {
           Visi Misi Program Studi Biologi
         </h2>
         <h2 className="text-center mb-3 mt-2 font-bold text-xl">Visi</h2>
-        <p className="text-justify leading-6">
-          Visi Program Studi Biologi disusun dengan mengacu kepada Visi Fakultas
-          Sains & Teknologi dan Visi Universitas Ottow Geissler Papua, adalah :
-          “Menghasilkan Sunber Daya Manusia yang berintelektual dan kompetitif
-          di Tanah Papua pada Tahun 2020 dibidang Keanekaragaman Hayati dan
-          Konservasi serta memiliki kepribadian yang Pancasilais dan takut akan
-          Tuhan.
+        <p className="text-justify leading-6 text-lg">
+          “Menjadi Program Studi yang Andal dan Berintegritas di bidang
+          kenaekaragaman Hayati dan Konservasi dalam mewujudkan Kualitas
+          Sumberdaya Manusia yang Unggul dan berkarakter Kristen”.
         </p>
         <h2 className="text-center mb-3 mt-8 font-bold text-xl">Misi</h2>
-        <div className="text-justify leading-6">
-          <p className="mb-2">
-            Untuk mewujudkan visi tersebut diatas selanjutnya dirumuskan Misi
-            Program Studi Biologi Fakultas Sains & Teknologi Universitas Ottow
-            Geissler Papua sebagai berikut:
-          </p>
+        <div className="text-justify leading-6 text-lg">
           <ol className="list-decimal">
             <li className="mb-2">
-              Menyelenggarakan pendidikan dan pengajaran yang bermutu
-              sertamenciptakan suasana lingkungan kampus yang kondusif untuk
-              menghasilkan sarjana ilmu biologi yang berintelektual dan
-              kompetitif dalam bidang keanekaragama hayati dan konservasi serta
-              berkepribadian sesuai nilai-nilai kristiani.
+              Menyelenggarakan pengajaran Biologi secara efektif dan efisien
+              yang terkait di bidang Keanekaragaman hayati dan Konservasi.
             </li>
             <li className="mb-2">
-              Melaksanakan penelitian dan pengabdian pada masyarakat sebagai
-              salah satu proses pemantapan dan pemanfaatan ilmu untuk masyarakat
-              khususnya yang berkaitan dengan progdi Biologi.
+              Melaksanakan penelitian biologi terkait keanekaragaman hayati dan
+              konservasi.
             </li>
             <li className="mb-2">
-              Menjadi progdi Biologi sebagai Progdi yang diminati oleh
-              masyarakat dan dipercaya sebagai lembaga pendidikan ilmiah yang di
-              dalam berbagai penelitian ilmiah yang sesuai dengan ilmu biosains
-              dan keaneka ragaman hayati.
+              Memberikan bimbingan, penyuluhan dan pengabdian kepada masyarakat
+              terkait keanekaragaman hayati dan konservasi.
+            </li>
+            <li className="mb-2">
+              Membangun kerjasama dengan pemangku kepentingan didalam maupun
+              diluar negeri dibidang pendidikan, penelitan dan pengabdian
+              masyarakat yang berkaitan dengan pemanfaatan Keanekaragaman hayati
+              dan konservasi.
             </li>
           </ol>
         </div>

@@ -23,28 +23,34 @@ const Geologi = () => {
           Visi Misi Program Studi Teknik Geologi
         </h2>
         <h2 className="text-center mb-3 mt-2 font-bold text-xl">Visi</h2>
-        <p className="text-justify leading-6">
-          Menghasilkan Sumber Daya Manusia yang kompetitif Di Tanah Papua dalam
-          Bidang Geologi Pertambangan Mineral, Geologi Energi Migas dan Geologi
-          Lingkungan yang berkepribadian Pancasilais dan Takut akan Tuhan.
+        <p className="text-justify leading-6 text-lg">
+          “Menjadi Program Studi yang andal dan berintegritas di bidang bidang
+          Geologi Pertambangan-mineral, Geologi Energi-migas dan Geologi
+          lingkungan,dalam mewujudkan kualitas SDM yang unggul dan berkarakter
+          Kristen.”
         </p>
         <h2 className="text-center mb-3 mt-8 font-bold text-xl">Misi</h2>
-        <div className="text-justify leading-6">
+        <div className="text-justify leading-6 text-lg">
           <ol className="list-decimal">
             <li className="mb-2">
-              Menyelenggarakan Pendidikan dan Pengajaran yang bermutu, kondusif
-              untuk menghasilkan Sarjana Teknik Geologi yang berkualitas,
-              profesional, pada tahun 2022 dan takut akan Tuhan.
+              Menyelenggarakan pengajaran Teknik Geologi secara efektif dan
+              efisien yang terkait di bidang bidang Geologi
+              Pertambangan-Mineral, Geologi Migas dan Geologi Lingkungan.
             </li>
             <li className="mb-2">
-              Mengambangkan dan menyelenggarakan penelitian dibidang Geologi
-              Pertambangan Mineral, Geologi Migas dan Geologi Lingkungan yang
-              berbasis kebumian.
+              Melaksanakan penelitian Teknik Geologi terkait keanekaragaman
+              hayati dan konservasi
             </li>
             <li className="mb-2">
-              Melaksanakan kegiatan Penelitian dan Pengabdian pada Masyarakat
-              sebagai salah satu proses pemantapan dan pemanfaatan ilmu untuk
-              masyarakat khususnya yang berkaitan dengan bidang-bidang geologi.
+              Memberikan bimbingan, penyuluhan dan pengabdian kepada masyarakat
+              terkait bidang Geologi Pertambangan-Mineral, Geologi Migas dan
+              Geologi Lingkungan.
+            </li>
+            <li className="mb-2">
+              Membangun kerjasama dengan pemangku kepentingan didalam maupun
+              diluar negeri dibidang pendidikan, penelitan dan pengabdian
+              masyarakat yang berkaitan dengan pemanfaatan bidang Geologi
+              Pertambangan-Mineral, Geologi Migas dan Geologi Lingkungan.
             </li>
           </ol>
         </div>
