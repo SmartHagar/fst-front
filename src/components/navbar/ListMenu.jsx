@@ -68,6 +68,11 @@ const ListMenu = () => {
         link: "/berita/list",
       },
       {
+        name: "Survei Kepuasan",
+        submenu: false,
+        link: "/survei",
+      },
+      {
         name: "Download",
         submenu: false,
         link: "/download/dokumen",

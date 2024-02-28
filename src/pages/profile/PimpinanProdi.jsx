@@ -52,7 +52,7 @@ const PimpinanProdi = () => {
             />
             <div className="text-center mt-2">
               <h1 className="text-lg font-bold">Prodi Teknik Geologi</h1>
-              <h2 className=" font-bold"></h2>
+              <h2 className=" font-bold">Doodle Dandy Waromi, S.T., M.T</h2>
             </div>
           </div>
         </div>

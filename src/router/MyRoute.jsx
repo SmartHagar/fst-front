@@ -25,6 +25,7 @@ import PimpinanFST from "../pages/profile/PimpinanFST";
 import Mhs from "../pages/mhs/Mhs";
 import Alumni from "../pages/alumni/Alumni";
 import Lab from "../pages/lab/Lab";
+import Survei from "../pages/survei/Survei";
 
 const MyRoute = () => {
   const location = useLocation();
@@ -62,6 +63,7 @@ const MyRoute = () => {
           <Route path="jadwal" element={<Jadwal />} />
           <Route path="dokumen" element={<Dokumen />} />
         </Route>
+        <Route path="survei" index element={<Survei />} />
         <Route path="mahasiswa" index element={<Mhs />} />
         <Route path="alumni" index element={<Alumni />} />
         <Route path="lab" index element={<Lab />} />
