@@ -45,7 +45,7 @@ const PimpinanProdi = () => {
 
           <div className="flex flex-col items-center">
             <img
-              src="/pimpinan/bingkai.png"
+              src="/pimpinan/PakDandy.jpeg"
               alt=""
               srcset=""
               className="rounded-md h-64"
