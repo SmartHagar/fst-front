@@ -13,11 +13,9 @@ function App() {
 
   return (
     <SearchDataContext.Provider value={search}>
-      <div className="overflow-x-hidden">
-        <Menu />
-        <MyRoute />
-        <Footer />
-      </div>
+      <Menu />
+      <MyRoute />
+      <Footer />
     </SearchDataContext.Provider>
   );
 }

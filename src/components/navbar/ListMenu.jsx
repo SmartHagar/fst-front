@@ -142,7 +142,7 @@ const ListMenu = () => {
 
   return (
     <div className="flex justify-between w-full gap-x-10">
-      <ul className="mb-4 mt-2 flex flex-col gap-2 lg:mb-0 lg:mt-0 lg:flex-row lg:items-center lg:gap-6">
+      <ul className="mb-4 mt-2 flex flex-col gap-2 lg:mb-0 lg:mt-0 lg:flex-row lg:items-center lg:gap-6 overflow-auto">
         {links &&
           links.map((row, index) => {
             return (
@@ -159,7 +159,7 @@ const ListMenu = () => {
                   </Link>
                 ) : (
                   // jika punya sub menu
-                  <div className="relative">
+                  <div className="">
                     <div
                       className={`flex gap-1 items-center cursor-pointer myNav ${
                         headLink === row.subName && "text-pink-900"
