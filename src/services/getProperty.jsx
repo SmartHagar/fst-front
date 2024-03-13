@@ -25,6 +25,16 @@ const GetProperty = (obj, prop) => {
     if (last.includes("MHS_NPM_FULL")) {
       return `${obj["mhs"]["prodi"]["kode"]}${mhs_angkatan}${obj["mhs"]["NPM"]}`;
     }
+    if (last.includes("mulai_seles")) {
+      const mulai = moment(obj["mulai"], "HH:mm:ss").format("HH:mm");
+      const seles = moment(obj["seles"], "HH:mm:ss").format("HH:mm");
+      return `${mulai}-${seles}`;
+    }
+    if (last.includes("progdi_smt")) {
+      const progdi = obj["prodi"]["singkat"];
+      const smt = obj["matkul"]["semester"];
+      return `${progdi}-${smt}`;
+    }
     var l = parts.length,
       i = 1,
       current = parts[0];

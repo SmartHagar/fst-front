@@ -9,7 +9,7 @@ const Geologi = () => {
   const { setDosenProdi, dataDosenProdi } = useDosen();
 
   useEffect(() => {
-    setDosenProdi(2);
+    setDosenProdi(3);
   }, [setDosenProdi]);
   return (
     <motion.div

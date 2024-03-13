@@ -74,18 +74,18 @@ const ListMenu = () => {
       },
       {
         name: "Download",
-        submenu: false,
-        link: "/download/dokumen",
-        // linkSubMenu: [
-        //   {
-        //     name: "Jadwal",
-        //     link: "/download/jadwal",
-        //   },
-        //   {
-        //     name: "Dokumen",
-        //     link: "/download/dokumen",
-        //   },
-        // ],
+        submenu: true,
+        subName: "download",
+        linkSubMenu: [
+          {
+            name: "Jadwal",
+            link: "/download/jadwal",
+          },
+          {
+            name: "Dokumen",
+            link: "/download/dokumen",
+          },
+        ],
       },
       {
         name: "Mahasiswa",
@@ -141,12 +141,15 @@ const ListMenu = () => {
   }, [pathname]);
 
   return (
-    <div className="flex justify-between w-full">
+    <div className="flex justify-between w-full gap-x-10">
       <ul className="mb-4 mt-2 flex flex-col gap-2 lg:mb-0 lg:mt-0 lg:flex-row lg:items-center lg:gap-6">
         {links &&
           links.map((row, index) => {
             return (
-              <div className="font-cabin text-black" key={index}>
+              <div
+                className="font-cabin text-black whitespace-nowrap"
+                key={index}
+              >
                 {!row.submenu ? (
                   <Link
                     to={row.link}

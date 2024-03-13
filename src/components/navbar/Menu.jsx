@@ -28,7 +28,7 @@ const Menu = () => {
     <>
       <div>{pathname === "/" && <Benner />}</div>
       {/* menu */}
-      <nav className="sticky z-50 top-0 block shadow-md backdrop-saturate-200 backdrop-blur-2xl bg-opacity-80 border text-white w-full mx-auto py-2 px-4 bg-transparent">
+      <nav className="sticky z-50 top-0 block shadow-md backdrop-saturate-200 backdrop-blur-2xl bg-opacity-80 border text-white w-full mx-auto py-2 px-4 bg-transparent overflow-auto">
         <div className="container mx-auto flex items-center justify-between text-blue-gray-900">
           <div className="hidden lg:block w-full">
             <ListMenu />

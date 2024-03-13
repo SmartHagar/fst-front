@@ -29,7 +29,7 @@ const Dosen = ({ dataDosenProdi }) => {
               </td>
               <td className="whitespace-nowrap py-1 text-gray-700">:</td>
               <td className="whitespace-nowrap py-1 text-gray-700 pl-4">
-                {row.nm_dosen}
+                {row.nama}
               </td>
             </tr>
             <tr>

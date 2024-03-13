@@ -5,7 +5,7 @@ import { devtools } from "zustand/middleware";
 import useUrl from "../services/base_url";
 
 // eslint-disable-next-line react-hooks/rules-of-hooks
-const { api } = useUrl();
+const { api_edom } = useUrl();
 
 const useDosen = create(
   devtools((set, get) => ({
@@ -13,7 +13,7 @@ const useDosen = create(
     dataDosenProdi: [],
     setDosen: async () => {
       try {
-        const res = await api({
+        const res = await api_edom({
           method: "get",
           url: `/dosen`,
         });
@@ -31,11 +31,11 @@ const useDosen = create(
     },
     setDosenProdi: async (prodi) => {
       try {
-        const res = await api({
+        const res = await api_edom({
           method: "get",
-          url: `/dosen/prodi/${prodi}`,
+          url: `/dosen?prodi_id=${prodi}`,
         });
-        set((state) => ({ ...state, dataDosenProdi: res.data.data }));
+        set((state) => ({ ...state, dataDosenProdi: res.data.data.data }));
         return {
           status: "berhasil",
           data: res.data,

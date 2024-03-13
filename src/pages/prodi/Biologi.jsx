@@ -9,7 +9,7 @@ const Biologi = () => {
   const { setDosenProdi, dataDosenProdi } = useDosen();
 
   useEffect(() => {
-    setDosenProdi(3);
+    setDosenProdi(2);
   }, [setDosenProdi]);
 
   return (
