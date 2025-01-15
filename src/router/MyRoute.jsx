@@ -26,6 +26,7 @@ import Mhs from "../pages/mhs/Mhs";
 import Alumni from "../pages/alumni/Alumni";
 import Lab from "../pages/lab/Lab";
 import Survei from "../pages/survei/Survei";
+import Video from "../pages/video/Video";
 
 const MyRoute = () => {
   const location = useLocation();
@@ -50,7 +51,11 @@ const MyRoute = () => {
           <Route path="biologi" element={<Biologi />} />
           <Route path="geologi" element={<Geologi />} />
         </Route>
-        <Route path="galeri" element={<Galeri />} />
+        {/* galeri */}
+        <Route path="galeri">
+          <Route path="foto" element={<Galeri />} />
+          <Route path="video" element={<Video />} />
+        </Route>
         {/* berita */}
         <Route path="berita" element={<Berita />}>
           <Route path="list" element={<ListBerita />} />

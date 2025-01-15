@@ -16,6 +16,7 @@ import useUrl from "../../services/base_url";
 import PengumumanModal from "../../components/modals/PengumumanModal";
 import useVideo from "../../stores/video";
 import Benner from "../../components/carousel/Benner";
+import ReactPlayer from "react-player";
 
 const Dashboard = () => {
   const { BASE_URL } = useUrl();
@@ -118,14 +119,13 @@ const Dashboard = () => {
                   <CardBody className="font-comic-neue mx-[-4px] h-72 w-full">
                     {dataVideo.length > 0 ? (
                       <>
-                        <iframe
+                        <ReactPlayer
+                          url={dataVideo[0].url}
+                          controls
                           width="100%"
                           height="100%"
-                          src={dataVideo[0].url}
                           title={dataVideo[0].judul}
-                          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                          allowFullScreen
-                        ></iframe>
+                        ></ReactPlayer>
                       </>
                     ) : (
                       <>

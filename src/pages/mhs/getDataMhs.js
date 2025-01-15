@@ -1,8 +1,8 @@
 /** @format */
-
+import { url_api_edom } from "../../services/base_url";
 // get data mhs by axios
 import axios from "axios";
-const url = `https://back.edom.fstuogp.com/api/mhs/byOrder`;
+const url = `${url_api_edom}/mhs/byOrder`;
 
 const fetchDataMhs = async ({ page, orderBy, sort, search }) => {
   try {

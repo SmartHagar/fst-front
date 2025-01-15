@@ -4,7 +4,7 @@ import axios from "axios";
 
 const BASE_URL = "https://admin.fstuogp.com";
 // const BASE_URL = "http://127.0.0.1:8000";
-const URL_EDOM = "https://back.edom.fstuogp.com";
+const URL_EDOM = "https://back.edom-lama.fstuogp.com";
 const url_auth = `${BASE_URL}/auth`;
 const url_api = `${BASE_URL}/json`;
 const url_crud = `${BASE_URL}/crud`;
@@ -39,3 +39,5 @@ export default function useUrl() {
     api_edom,
   };
 }
+
+export { url_api_edom };

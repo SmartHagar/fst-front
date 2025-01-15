@@ -59,8 +59,18 @@ const ListMenu = () => {
       },
       {
         name: "Galeri",
-        submenu: false,
-        link: "/galeri",
+        submenu: true,
+        subName: "galeri",
+        linkSubMenu: [
+          {
+            name: "Foto",
+            link: "/galeri/foto",
+          },
+          {
+            name: "Video",
+            link: "/galeri/video",
+          },
+        ],
       },
       {
         name: "Berita",
